@@ -12,26 +12,26 @@ function App() {
     <main >
       <span className = "resultado" type = "text">50</span>
       <span className = "displey" type = "text">25 + 25</span>
-      <Buton clase = "especial" text = "C"  handleClick = ""/>
-      <Buton clase = "especial" text = "%" handleClick = ""/>
-      <Buton clase = "especial" text = {<TbMath />} handleClick = ""/>
-      <Buton clase = "operacion" text = {<CgMathDivide />} handleClick = ""/>
-      <Buton clase = "numero" text = "7" handleClick = ""/>
-      <Buton clase = "numero" text = "8" handleClick = ""/>
-      <Buton clase = "numero" text = "9" handleClick = ""/>
-      <Buton clase = "operacion" text = "x" handleClick = ""/>
-      <Buton clase = "numero" text = "4" handleClick = ""/>
-      <Buton clase = "numero" text = "5" handleClick = ""/>
-      <Buton clase = "numero" text = "6" handleClick = ""/> 
-      <Buton clase = "operacion" text = "+" handleClick = ""/>
-      <Buton clase = "numero" text = "1" handleClick = ""/>
-      <Buton clase = "numero" text = "2" handleClick = ""/>
-      <Buton clase = "numero" text = "3" handleClick = ""/>
-      <Buton clase = "operacion" text = "-" handleClick = ""/>
-      <Buton clase = "numero" text = "0" handleClick = ""/>
-      <Buton clase = "numero" text = "." handleClick = ""/>
-      <Buton clase = "especial" text = {<LuDelete />} handleClick = ""/>
-      <Buton clase = "operacion" text = "=" handleClick = ""/>
+      <Button clase = "especial" text = "C"  handleClick = ""/>
+      <Button clase = "especial" text = "%" handleClick = ""/>
+      <Button clase = "especial" text = {<TbMath />} handleClick = ""/>
+      <Button clase = "operacion" text = {<CgMathDivide />} handleClick = ""/>
+      <Button clase = "numero" text = "7" handleClick = ""/>
+      <Button clase = "numero" text = "8" handleClick = ""/>
+      <Button clase = "numero" text = "9" handleClick = ""/>
+      <Button clase = "operacion" text = "x" handleClick = ""/>
+      <Button clase = "numero" text = "4" handleClick = ""/>
+      <Button clase = "numero" text = "5" handleClick = ""/>
+      <Button clase = "numero" text = "6" handleClick = ""/> 
+      <Button clase = "operacion" text = "+" handleClick = ""/>
+      <Button clase = "numero" text = "1" handleClick = ""/>
+      <Button clase = "numero" text = "2" handleClick = ""/>
+      <Button clase = "numero" text = "3" handleClick = ""/>
+      <Button clase = "operacion" text = "-" handleClick = ""/>
+      <Button clase = "numero" text = "0" handleClick = ""/>
+      <Button clase = "numero" text = "." handleClick = ""/>
+      <Button clase = "especial" text = {<LuDelete />} handleClick = ""/>
+      <Button clase = "operacion" text = "=" handleClick = ""/>
       
     </main>
   );
