@@ -1,0 +1,17 @@
+button {
+    border: none;
+    border-radius: 1rem;
+    background-color: #FFFFFF;;
+    font-size: 2rem;
+    aspect-ratio: 1 / 1;
+}
+button:active {
+    transform: scale(1.02);
+}
+button.especial {
+    background-color: #c8c9cf;
+    text-align: center;
+}
+button.operacion {
+    background-color: #4B5EFC;;
+}
