@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css'
 function Button(props) {
-    const {text, className, onClick} = props;
-    return <button className={className} onClick={onClick}>{text}</button>
+    const {children, className, onClick} = props;
+    return <button className={className} onClick={onClick}>{children}</button>
 }
 export default Button;
