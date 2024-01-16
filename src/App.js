@@ -9,41 +9,81 @@ function App() {
   const [operation, setOperation] = useState('0');
   const [total, setTotal] = useState('0');
 
-  const symbols = ['+', '-', '*', '/', '+/-', '%']
+  const symbols = ['+', '-', '*', '/', '+/-','%']
 
   const modifyOperation = (value) => {
-    // 5555 * 665
-    if(['+', '-', '*', '/', '+/-', '%'].includes(value) && symbols.find(sym => operation.includes(sym))){
-
-      const lastCharacter = operation[operation.length - 1]
-
-      if(symbols.includes(lastCharacter)){
-        const newOperation = operation.replace(lastCharacter, value)
-        setOperation(newOperation)
-        return
+    if (value === '%' && operation !== '') {
+      try {
+        const parts = operation.split(/[\+\-\*\/]/);
+        const lastPart = parts.pop();
+        const number = parseFloat(lastPart.replace('%', ''));
+        const newNumber = number / 100
+        const result = (Number(parts.join('')) + newNumber) ;
+  
+        setTotal(result);
+        setOperation(result);
+      } catch (error) {
+        setTotal('Error');
       }
-      
-      const result = eval(operation)
+      return;
+    }
+    if (value === '+/-' && operation == ''){
+      try {
+        const parts = operation.split('+/-');
+        const lastPart = parts.pop();
+        const number = (lastPart.replace('+/-', ''));
+        const newNumber = number * (-1);
+        console.log(parts)
 
-  //    if(!total){
-   //     setTotal(value)
-   //     return
-   //   }
-      console.log({value})
-      console.log({result})
-      setTotal(result)
-      setOperation(result + value)
-      return
+        setTotal(newNumber)
+        setOperation(newNumber)
+        console.log(setTotal(newNumber));
+      } catch (error){
+        setTotal('error')
+      }
     }
 
-    if (operation.length >= 15)
-      return
-
-    if (operation === '0')
-      return setOperation(value)
-
-    setOperation(operation + value)
-  }
+  
+    if (['+', '-', '*', '/', '%', '+/-'].includes(value) && symbols.find(sym => operation.includes(sym))) {
+      const lastCharacter = operation[operation.length - 1];
+    
+      if (symbols.includes(lastCharacter)) {
+        const newOperation = operation.replace(lastCharacter, value);
+        setOperation(newOperation);
+        return;
+      }
+    
+      if (value === '+/-') {
+        // Cambiar el signo de la operación actual
+        setOperation(prevOperation => {
+          const firstChar = prevOperation[0];
+          return firstChar === '-' ? prevOperation.slice(1) : '-' + prevOperation;
+        });
+        return;
+      }
+    
+      try {
+        const calculate = new Function('return ' + operation);
+        const result = calculate();
+    
+        setTotal(result);
+        setOperation(result + value);
+      } catch (error) {
+        setTotal('Error');
+      }
+    
+      return;
+    }
+    
+  
+    if (operation === '0') {
+      return setOperation(value);
+    }
+  
+    setOperation(operation + value);
+  };
+  
+  
 
   const deleteValue = () => {
     if (operation.length === 1) return setOperation('0')
@@ -57,28 +97,16 @@ function App() {
   }
 
   const calculate = () => {
-    try {
-      // Percentage verification
-      if(operation.includes('%')) {
-        const value = operation.split('%')
-        return setTotal(eval(`${value[1]} * (${value[0]}/100)`))
-      }
 
-      // Default Case
       setTotal(eval(operation))
-
-    } catch (error) {
-      setOperation('Error')
-    }
   }
-
   return (
     <main >
       <span className="resultado" type="text">{total}</span>
       <span className="displey" type="text">{operation}</span>
       <Button className="especial" value="" onClick={reset} >C</Button>
       <Button className="especial" value="/100" onClick={() => modifyOperation("%")}>%</Button>
-      <Button className="especial" value="/" onClick={() => modifyOperation("/")}>+/-</Button>
+      <Button className="especial" value="/" onClick={() => modifyOperation("+/-")}>+/-</Button>
       <Button className="operacion" value="/" onClick={() => modifyOperation("/")}><CgMathDivide /></Button>
       <Button className="numero" value="7" onClick={() => modifyOperation("7")}>7</Button>
       <Button className="numero" value="8" onClick={() => modifyOperation("8")}>8</Button>
