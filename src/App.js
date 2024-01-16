@@ -53,15 +53,6 @@ function App() {
         return;
       }
     
-      if (value === '+/-') {
-        // Cambiar el signo de la operación actual
-        setOperation(prevOperation => {
-          const firstChar = prevOperation[0];
-          return firstChar === '-' ? prevOperation.slice(1) : '-' + prevOperation;
-        });
-        return;
-      }
-    
       try {
         const calculate = new Function('return ' + operation);
         const result = calculate();
