@@ -2,8 +2,12 @@ button {
     border: none;
     border-radius: 1rem;
     background-color: #FFFFFF;;
+    justify-content: space-between;
     font-size: 2rem;
     aspect-ratio: 1 / 1;
+    height: 50px;
+    width: 50px;
+    flex: 1 0 25%;
 }
 button:active {
     transform: scale(1.02);
@@ -11,7 +15,14 @@ button:active {
 button.especial {
     background-color: #c8c9cf;
     text-align: center;
+    width: 100px;
 }
 button.operacion {
-    background-color: #4B5EFC;;
+    background-color: #4B5EFC;
+    text-align: center;
+    width: 100%;
+}
+button.numero {
+    text-align: center;
+    width: 100%;
 }
