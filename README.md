@@ -4,20 +4,13 @@
 
 This simple calculator is built using Create React App, making it easy to set up and run. Perform basic mathematical operations such as addition, subtraction, multiplication, and division with ease.
 
-### Table of Contents
-- Getting Started
-- Features
-- Usage
-- Contributing
-- License
-
 ## Getting Started
 
 To get started with the Calculator App, follow these steps:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/calculator-app.git
+    git clone https://github.com/Kaareel/simple-calculator.git
     ```
 
 2. **Change into the project directory:**
