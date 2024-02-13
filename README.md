@@ -4,6 +4,9 @@
 
 This simple calculator is built using Create React App, making it easy to set up and run. Perform basic mathematical operations such as addition, subtraction, multiplication, and division with ease.
 
+![image](https://github.com/Kaareel/simple-calculator/assets/105023448/08e701ab-0fe7-4bf8-88cf-7b306d825852)
+
+
 ## Getting Started
 
 To get started with the Calculator App, follow these steps:
