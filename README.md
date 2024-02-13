@@ -1,6 +1,6 @@
 # Calculator App
 
-## Welcome to the Calculator App project!
+## Welcome to the Calculator App project! 
 
 This simple calculator is built using Create React App, making it easy to set up and run. Perform basic mathematical operations such as addition, subtraction, multiplication, and division with ease.
 
